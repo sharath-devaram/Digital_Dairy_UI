@@ -1,0 +1,27 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--color-dusk-900);
+  border: 1px solid var(--color-dusk-700);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+}
+
+.login-title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 24px;
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+.login-card .btn {
+  width: 100%;
+  margin-top: 4px;
+}

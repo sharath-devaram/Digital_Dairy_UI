@@ -1,0 +1,15 @@
+.home-intro {
+  text-align: center;
+  margin-bottom: 8px;
+}
+.home-title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 30px;
+  color: var(--color-parchment);
+  margin-bottom: 6px;
+}
+.home-sub {
+  font-size: 13px;
+}

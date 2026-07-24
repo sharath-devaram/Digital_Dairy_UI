@@ -1,0 +1,9 @@
+.dashboard-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.dashboard-head h1 {
+  font-size: 26px;
+}

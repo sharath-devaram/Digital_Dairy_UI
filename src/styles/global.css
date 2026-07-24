@@ -1,0 +1,216 @@
+/* =========================================================================
+   DESIGN TOKENS
+   Concept: a diary written at day's end, by lamplight. Each entry is a
+   flower strung onto the garland of your days (మల్లెపూలు మాల).
+   ========================================================================= */
+:root {
+  /* --- Color: dusk/lamplight diary palette --- */
+  --color-dusk-950: #12162a;   /* page background: deep indigo dusk */
+  --color-dusk-900: #171c33;   /* card/panel background */
+  --color-dusk-800: #232a4a;   /* raised surface / hover */
+  --color-dusk-700: #333c66;   /* borders, dividers */
+  --color-parchment: #f2ecdd;  /* primary text - warm paper, not stark white */
+  --color-parchment-dim: #b9b6c9; /* secondary text */
+  --color-lamp-gold: #e3a84e;  /* primary accent - lamplight */
+  --color-lamp-gold-bright: #f0bf70;
+  --color-dusty-rose: #c98a92; /* warmth accent - comments, hearts */
+  --color-danger: #d9707a;
+
+  /* --- Type --- */
+  --font-telugu: "Anek Telugu", "Noto Sans Telugu", sans-serif;
+  --font-display: "Fraunces", "Anek Telugu", serif;
+  --font-ui: "Inter", "Anek Telugu", sans-serif;
+
+  /* --- Layout --- */
+  --content-width: 680px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--color-dusk-950);
+  background-image: radial-gradient(
+      ellipse 900px 500px at 15% -10%,
+      rgba(227, 168, 78, 0.09),
+      transparent 60%
+    ),
+    radial-gradient(ellipse 700px 500px at 100% 10%, rgba(201, 138, 146, 0.06), transparent 55%);
+  background-attachment: fixed;
+  color: var(--color-parchment);
+  font-family: var(--font-telugu);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-telugu);
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font-family: var(--font-ui);
+}
+
+::selection {
+  background: rgba(227, 168, 78, 0.35);
+}
+
+/* Visible keyboard focus everywhere - accessibility floor */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-lamp-gold);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- Buttons --- */
+.btn {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.15s ease, opacity 0.15s ease;
+  letter-spacing: 0.01em;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn-primary {
+  background: var(--color-lamp-gold);
+  color: #241a08;
+}
+.btn-primary:hover {
+  background: var(--color-lamp-gold-bright);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--color-parchment-dim);
+  border: 1px solid var(--color-dusk-700);
+}
+.btn-ghost:hover {
+  color: var(--color-parchment);
+  border-color: var(--color-parchment-dim);
+}
+.btn-danger {
+  background: transparent;
+  color: var(--color-danger);
+  border: 1px solid rgba(217, 112, 122, 0.4);
+}
+.btn-danger:hover {
+  background: rgba(217, 112, 122, 0.12);
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+/* --- Form fields --- */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+.field label {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-parchment-dim);
+}
+.field input[type="text"],
+.field input[type="password"],
+.field textarea {
+  background: var(--color-dusk-900);
+  border: 1px solid var(--color-dusk-700);
+  border-radius: var(--radius-sm);
+  color: var(--color-parchment);
+  padding: 11px 14px;
+  font-size: 15px;
+  font-family: var(--font-telugu);
+  resize: vertical;
+}
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--color-lamp-gold);
+}
+.field-error {
+  color: var(--color-danger);
+  font-size: 13px;
+  font-family: var(--font-ui);
+}
+
+.hint {
+  font-family: var(--font-ui);
+  font-size: 12.5px;
+  color: var(--color-parchment-dim);
+  opacity: 0.75;
+}
+
+.banner {
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 14px;
+  font-family: var(--font-ui);
+  margin-bottom: 16px;
+}
+.banner-error {
+  background: rgba(217, 112, 122, 0.12);
+  border: 1px solid rgba(217, 112, 122, 0.35);
+  color: #f3b7bc;
+}
+.banner-success {
+  background: rgba(227, 168, 78, 0.1);
+  border: 1px solid rgba(227, 168, 78, 0.3);
+  color: var(--color-lamp-gold-bright);
+}
