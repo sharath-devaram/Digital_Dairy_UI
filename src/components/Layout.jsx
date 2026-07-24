@@ -14,7 +14,7 @@ export default function Layout({ children }) {
             <span className="site-title-lamp" aria-hidden="true">
               ✦
             </span>
-            నా డైరీ
+            నా జీవిత వ్యథలు
           </Link>
 
           <nav className="site-nav">
@@ -52,7 +52,7 @@ export default function Layout({ children }) {
 
       <footer className="site-footer">
         <div className="container">
-          <span className="hint">ప్రతి రోజు ఒక పువ్వు — every day, another flower on the thread.</span>
+          <span className="hint"> నా జీవిత వ్యథలు - కథలు - every day, another drama on the thread.</span>
         </div>
       </footer>
     </div>
